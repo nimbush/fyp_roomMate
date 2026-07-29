@@ -1,0 +1,53 @@
+name: roommate_finder
+description: RoomMate Finder - Find your perfect roommate.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Navigation
+  go_router: ^14.0.0
+
+  # State management
+  provider: ^6.1.2
+
+  # HTTP
+  http: ^1.2.1
+
+  # WebSocket / STOMP
+  stomp_dart_client: ^3.0.1
+
+  # Local storage
+  shared_preferences: ^2.3.0
+
+  # Image handling
+  image_picker: ^1.1.2
+  cached_network_image: ^3.3.1
+
+  # UI helpers
+  shimmer: ^3.0.0
+
+  # Card swipe
+  flutter_card_swiper: ^7.0.1
+
+  # OTP input - custom implementation (no native deps)
+
+  # Date/time
+  intl: ^0.19.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
