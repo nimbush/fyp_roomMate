@@ -1,8 +1,17 @@
 class AppConfig {
-  // 10.0.2.2 routes to the host machine from an Android emulator
-  static const String baseUrl = 'http://10.0.2.2:8010';
-  static const String wsUrl = 'ws://10.0.2.2:8010/ws-chat';
-  static const String imageBaseUrl = 'http://10.0.2.2:8010/images/';
+  /// Backend host. AWS Elastic IP, so it survives instance restarts.
+  ///
+  /// Override at build time without editing this file:
+  ///   flutter run --dart-define=API_HOST=10.0.2.2:8015
+  /// (10.0.2.2 is how an Android emulator reaches the host machine.)
+  static const String _host = String.fromEnvironment(
+    'API_HOST',
+    defaultValue: '13.203.84.26:8015',
+  );
+
+  static const String baseUrl = 'http://$_host';
+  static const String wsUrl = 'ws://$_host/ws-chat';
+  static const String imageBaseUrl = 'http://$_host/images/';
 
   static const Duration connectTimeout = Duration(seconds: 15);
   static const Duration receiveTimeout = Duration(seconds: 15);

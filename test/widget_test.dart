@@ -1,9 +1,11 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:roommate_finder/main.dart';
 
 void main() {
   testWidgets('App renders without crashing', (WidgetTester tester) async {
-    await tester.pumpWidget(const RoomMateFinderApp());
+    await tester
+        .pumpWidget(const ProviderScope(child: RoomMateFinderApp()));
     expect(find.byType(RoomMateFinderApp), findsOneWidget);
 
     // The splash screen waits ~2.8s before routing. Let that timer fire,
